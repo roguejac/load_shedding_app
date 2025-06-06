@@ -16,3 +16,4 @@ A comprehensive dashboard for tracking and predicting loadshedding in South Afri
 1. Clone this repository
 2. Sign up for EskomSePush API at https://eskomsepush.gumroad.com/l/api
 3. Create a `.env` file with your API key:# load_shedding_app
+# load_shedding_app
