@@ -1,0 +1,291 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+.area-selector select {
+    padding: 8px 15px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 16px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.status-card {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.status-indicator {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.status-indicator span {
+    padding: 15px 25px;
+    border-radius: 6px;
+    background-color: #f0f4f8;
+}
+
+.last-updated {
+    margin-top: auto;
+    font-size: 14px;
+    color: #666;
+}
+
+.prediction-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.prediction-form {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.prediction-form select, .prediction-form button {
+    padding: 8px 15px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.prediction-form button {
+    background-color: #4a89dc;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.prediction-form button:hover {
+    background-color: #3b7dd8;
+}
+
+.prediction-result {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    border-left: 4px solid #4a89dc;
+}
+
+.map-card {
+    grid-column: span 2;
+    min-height: 400px;
+}
+
+#map {
+    height: 100%;
+    min-height: 380px;
+    border-radius: 6px;
+}
+
+.chart-card canvas {
+    width: 100% !important;
+    height: 250px !important;
+}
+
+.stats-card .stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.stat-label {
+    font-weight: 600;
+    color: #555;
+}
+
+.stat-value {
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .status-card, .map-card {
+        grid-column: span 1;
+    }
+}
+
+/* Calendar Widget */
+.calendar-card {
+    grid-column: span 2;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px 15px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar-day {
+    padding: 8px;
+    text-align: center;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+}
+
+.calendar-day.header {
+    font-weight: bold;
+    background-color: #e9ecef;
+}
+
+.calendar-day.shedding {
+    background-color: #ffdddd;
+    position: relative;
+}
+
+.calendar-day.shedding::after {
+    content: attr(data-stage);
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    font-size: 10px;
+    color: #d32f2f;
+}
+
+/* Calculator Widget */
+.calculator-card {
+    grid-column: span 2;
+}
+
+.calculator-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.appliance-input {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.appliance-input select, 
+.appliance-input input, 
+.appliance-input button {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.appliance-list {
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 10px;
+    min-height: 100px;
+}
+
+.appliance-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.appliance-item:last-child {
+    border-bottom: none;
+}
+
+.calculator-results {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+/* Notification Widget */
+.notification-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.notification-card input, 
+.notification-card select, 
+.notification-card button {
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.notification-card button {
+    background-color: #4a89dc;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#notificationMessage {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    display: none;
+}
+
+#notificationMessage.success {
+    background-color: #d4edda;
+    color: #155724;
+    display: block;
+}
+
+#notificationMessage.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    display: block;
+}
